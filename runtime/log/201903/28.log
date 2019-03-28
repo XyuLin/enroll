@@ -1,0 +1,918 @@
+---------------------------------------------------------------
+[ 2019-03-28T14:46:02+08:00 ] 127.0.0.1 POST localhost/sub/public/index.php/admin/index/login
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001345s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin` [ RunTime:0.003641s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000502s ]
+[ sql ] [ SQL ] UPDATE `sub_admin`  SET `logintime`=1553755562,`token`='615714c8-c869-458c-9141-dbbba486a5ae',`updatetime`=1553755562  WHERE  `id` = 1 [ RunTime:0.001746s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.003724s ]
+[ sql ] [ SQL ] INSERT INTO `sub_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('登录' , '{\"__token__\":\"5d6ab3362308710158b8f870cfa3bc0b\",\"username\":\"admin\",\"captcha\":\"c6fy\"}' , '/sub/public/index.php/admin/index/login' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '127.0.0.1' , 1553755562) [ RunTime:0.002155s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:46:02+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001751s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004034s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004675s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001056s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000658s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:46:02+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001436s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004075s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004839s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000971s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000659s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:46:07+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001630s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004437s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003924s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000661s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001130s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.000559s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:46:08+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1553755567938
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001436s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004092s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003073s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000819s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:47:19+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/profile?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001484s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003387s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000464s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003582s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000583s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:47:19+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/profile/index?sort=id&order=desc&offset=0&limit=10&_=1553755639416
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011959s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003292s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003251s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.003432s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_admin_log` WHERE  `admin_id` = 1 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_admin_log` WHERE  `admin_id` = 1 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000415s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:47:56+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1553755567939
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011286s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.006131s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005175s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001061s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001014s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:48:00+08:00 ] 127.0.0.1 POST localhost/sub/public/index.php/admin/auth/rule/multi/ids/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002326s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004096s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003741s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000960s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` WHERE  `id` IN (1) [ RunTime:0.000560s ]
+[ sql ] [ SQL ] UPDATE `sub_auth_rule`  SET `ismenu`=0,`updatetime`=1553755680  WHERE  `id` = 1 [ RunTime:0.002189s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.004037s ]
+[ sql ] [ SQL ] INSERT INTO `sub_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"\",\"ids\":\"1\",\"params\":\"ismenu=0\"}' , '/sub/public/index.php/admin/auth/rule/multi/ids/1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '127.0.0.1' , 1553755680) [ RunTime:0.002134s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:48:00+08:00 ] 127.0.0.1 POST localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011745s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003933s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004235s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000908s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.001097s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.005061s ]
+[ sql ] [ SQL ] INSERT INTO `sub_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/sub/public/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '127.0.0.1' , 1553755680) [ RunTime:0.002625s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:48:00+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1553755567940
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002253s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.005219s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005240s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001207s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:48:00+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1553755567941
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003161s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.005435s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005822s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001003s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001853s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:48:03+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/profile/index?sort=id&order=desc&offset=0&limit=10&_=1553755639417
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002761s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004107s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004363s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.004613s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_admin_log` WHERE  `admin_id` = 1 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_admin_log` WHERE  `admin_id` = 1 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000583s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:06+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/profile?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001652s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003577s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003559s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000668s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:06+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011110s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003883s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003326s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000643s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:06+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/profile?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002024s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004324s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005381s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000856s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:07+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001990s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004671s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005390s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_config` [ RunTime:0.006137s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_config` [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000677s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:07+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/profile/index?sort=id&order=desc&offset=0&limit=10&_=1553756106915
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002145s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004657s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004403s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000992s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.005169s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_admin_log` WHERE  `admin_id` = 1 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_admin_log` WHERE  `admin_id` = 1 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000610s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:10+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011365s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003442s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003492s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.000505s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:10+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1553756110446
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001457s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003705s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003621s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000963s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:12+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule/edit/ids/85?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001479s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003935s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003859s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` WHERE  `id` = 85 LIMIT 1 [ RunTime:0.000530s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:30+08:00 ] 127.0.0.1 POST localhost/sub/public/index.php/admin/auth/rule/edit/ids/85?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011444s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003834s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003427s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000732s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` WHERE  `id` = 85 LIMIT 1 [ RunTime:0.000617s ]
+[ sql ] [ SQL ] SELECT `id` FROM `sub_auth_rule` WHERE  `name` = 'enroll'  AND `id` <> 85 LIMIT 1 [ RunTime:0.000538s ]
+[ sql ] [ SQL ] UPDATE `sub_auth_rule`  SET `pid`=0,`title`='报名记录',`icon`='fa fa-child',`weigh`=0,`updatetime`=1553756130  WHERE  `id` = 85 [ RunTime:0.002225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.003731s ]
+[ sql ] [ SQL ] INSERT INTO `sub_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('权限管理 菜单规则 编辑' , '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"0\",\"name\":\"enroll\",\"title\":\"\\u62a5\\u540d\\u8bb0\\u5f55\",\"icon\":\"fa fa-child\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"\",\"status\":\"normal\"},\"ids\":\"85\"}' , '/sub/public/index.php/admin/auth/rule/edit/ids/85?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '127.0.0.1' , 1553756130) [ RunTime:0.002108s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:30+08:00 ] 127.0.0.1 POST localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011626s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.005823s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.006740s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.006031s ]
+[ sql ] [ SQL ] INSERT INTO `sub_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/sub/public/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '127.0.0.1' , 1553756130) [ RunTime:0.002094s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:30+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1553756110447
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002253s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.006810s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005885s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001888s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:30+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1553756110448
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001849s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004773s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004018s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001006s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:31+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001902s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003428s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004602s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'enroll' LIMIT 1 [ RunTime:0.000504s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:32+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1553756132015
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001542s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.005110s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004090s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003631s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_enroll` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000390s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:53+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001567s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003430s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003518s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'enroll' LIMIT 1 [ RunTime:0.000530s ]
+---------------------------------------------------------------
+[ 2019-03-28T14:55:53+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1553756153226
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001615s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003693s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003793s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003713s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_enroll` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000369s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:04:42+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001838s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003512s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003150s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000608s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:04:42+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010977s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003371s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003275s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000597s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:04:42+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001599s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004617s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004516s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'enroll' LIMIT 1 [ RunTime:0.000506s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:04:42+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001470s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004335s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003910s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_config` [ RunTime:0.004546s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_config` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000575s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:04:42+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1553756682673
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012215s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004128s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003944s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.004312s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_enroll` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:29+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011012s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003648s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003572s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000621s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:29+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001463s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003555s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003978s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000636s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:29+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001681s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004822s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004993s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'enroll' LIMIT 1 [ RunTime:0.000519s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:29+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002527s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004413s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004263s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000737s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_config` [ RunTime:0.004358s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_config` [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000533s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:29+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1553756729767
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002428s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004804s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004820s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001134s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.004988s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_enroll` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000396s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:32+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1553756729768
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002394s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.005909s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000896s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003826s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003964s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_enroll` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000305s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:33+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002031s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003660s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003776s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000614s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:33+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001417s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003825s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003619s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000618s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:33+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001443s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004322s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003525s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000600s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'enroll' LIMIT 1 [ RunTime:0.000561s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:33+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011394s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004391s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005071s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000984s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_config` [ RunTime:0.005335s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_config` [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000672s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:05:33+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1553756733556
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011682s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004224s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003468s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.004180s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_enroll` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000313s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:06:15+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001661s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004511s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004616s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000892s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:06:15+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001418s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003500s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003492s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000728s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:06:15+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002242s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004392s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004474s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'enroll' LIMIT 1 [ RunTime:0.000611s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:06:15+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001555s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.005213s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005620s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000773s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_config` [ RunTime:0.004781s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_config` [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000463s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:06:15+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/enroll/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1553756775410
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011297s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004538s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005239s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.012368s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_enroll` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000361s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:06:19+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/profile?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001450s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004203s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003697s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000707s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:06:19+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/profile/index?sort=id&order=desc&offset=0&limit=10&_=1553756779712
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001508s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003829s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004098s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000954s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_admin_log` [ RunTime:0.004731s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sub_admin_log` WHERE  `admin_id` = 1 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000899s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_admin_log` WHERE  `admin_id` = 1 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000418s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:43:43+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002364s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004560s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003955s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000678s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:43:44+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002521s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004263s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.006223s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001191s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_config` [ RunTime:0.005302s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_config` [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000568s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:43:59+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/config?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001891s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004980s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000953s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004449s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000617s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:43:59+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010707s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.003347s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003277s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000577s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:43:59+08:00 ] 127.0.0.1 GET localhost/sub/public/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001729s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004951s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.005043s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_config` [ RunTime:0.005845s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_config` [ RunTime:0.001484s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000592s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:44:02+08:00 ] 127.0.0.1 GET localhost/sub/public/admin
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001514s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.004366s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004059s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000672s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:44:02+08:00 ] 127.0.0.1 GET localhost/sub/public/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001745s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_group_access` [ RunTime:0.005007s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `sub_auth_group_access` `aga` LEFT JOIN `sub_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.004834s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `sub_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_config` [ RunTime:0.006692s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_config` [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `sub_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000434s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:44:59+08:00 ] 192.168.1.125 GET 192.168.1.125/sub/public/api/index/signup
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001831s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.004860s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` IS NULL LIMIT 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `sub_enroll` LIMIT 1 [ RunTime:0.000275s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'username' cannot be null
+---------------------------------------------------------------
+[ 2019-03-28T15:52:15+08:00 ] 192.168.1.108 OPTIONS 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001572s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003497s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` IS NULL LIMIT 1 [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `sub_enroll` LIMIT 1 [ RunTime:0.000288s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'username' cannot be null
+---------------------------------------------------------------
+[ 2019-03-28T15:52:31+08:00 ] 192.168.1.108 OPTIONS 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011964s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003742s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` IS NULL LIMIT 1 [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `sub_enroll` LIMIT 1 [ RunTime:0.000284s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'username' cannot be null
+---------------------------------------------------------------
+[ 2019-03-28T15:53:47+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011882s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003576s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '123' LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `sub_enroll` LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] INSERT INTO `sub_enroll` (`username` , `mobile` , `createtime` , `houses` , `premises`) VALUES ('sht' , '123' , 1553759627 , '1-1' , '润江城') [ RunTime:0.000393s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:54:02+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011290s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003512s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '123' LIMIT 1 [ RunTime:0.000400s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:54:16+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011933s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003460s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '123' LIMIT 1 [ RunTime:0.000441s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:54:17+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001374s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003402s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '123' LIMIT 1 [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:54:17+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001385s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003943s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '123' LIMIT 1 [ RunTime:0.000376s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:54:17+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011342s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003376s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '123' LIMIT 1 [ RunTime:0.000367s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:57:25+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001485s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003699s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '15006172050' LIMIT 1 [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `sub_enroll` LIMIT 1 [ RunTime:0.000318s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+---------------------------------------------------------------
+[ 2019-03-28T15:58:02+08:00 ] 192.168.1.108 OPTIONS 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.018539s] [吞吐率：53.94req/s] [内存消耗：1,734.20kb] [文件加载：93]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001165s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'accept' => '*/*',
+  'access-control-request-headers' => 'content-type',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'access-control-request-method' => 'POST',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000971s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-28T15:58:02+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.051477s] [吞吐率：19.43req/s] [内存消耗：2,818.84kb] [文件加载：113]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000013s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001115s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '56',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+)
+[ info ] [ PARAM ] array (
+  'username' => '123',
+  'mobile' => '15006172050',
+  'houses' => '123',
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001077s ]
+[ info ] [ RUN ] app\api\controller\Index->signUp[ C:\Work\Code\sub\application\api\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010124s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003712s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '15006172050' LIMIT 1 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `sub_enroll` LIMIT 1 [ RunTime:0.000366s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'[C:\Work\Code\sub\thinkphp\library\think\db\Connection.php:453]
+---------------------------------------------------------------
+[ 2019-03-28T15:58:15+08:00 ] 192.168.1.108 OPTIONS 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.018168s] [吞吐率：55.04req/s] [内存消耗：1,734.20kb] [文件加载：93]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001089s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'accept' => '*/*',
+  'access-control-request-headers' => 'content-type',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'access-control-request-method' => 'POST',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000955s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-28T15:58:15+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.045471s] [吞吐率：21.99req/s] [内存消耗：2,781.70kb] [文件加载：109]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001153s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '56',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+)
+[ info ] [ PARAM ] array (
+  'username' => '123',
+  'mobile' => '15006172050',
+  'houses' => '123',
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000965s ]
+[ info ] [ RUN ] app\api\controller\Index->signUp[ C:\Work\Code\sub\application\api\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011415s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003408s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '15006172050' LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `sub_enroll` LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] INSERT INTO `sub_enroll` (`username` , `mobile` , `createtime` , `houses` , `premises`) VALUES ('123' , '15006172050' , 1553759895 , '123' , '润江城') [ RunTime:0.000454s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:58:17+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.046792s] [吞吐率：21.37req/s] [内存消耗：2,749.54kb] [文件加载：108]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001090s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '56',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+)
+[ info ] [ PARAM ] array (
+  'username' => '123',
+  'mobile' => '15006172050',
+  'houses' => '123',
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000980s ]
+[ info ] [ RUN ] app\api\controller\Index->signUp[ C:\Work\Code\sub\application\api\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011525s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003462s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '15006172050' LIMIT 1 [ RunTime:0.000408s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:58:22+08:00 ] 192.168.1.108 OPTIONS 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.023371s] [吞吐率：42.79req/s] [内存消耗：1,734.20kb] [文件加载：93]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000013s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001227s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'accept' => '*/*',
+  'access-control-request-headers' => 'content-type',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'access-control-request-method' => 'POST',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000987s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-28T15:58:22+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.043634s] [吞吐率：22.92req/s] [内存消耗：2,781.70kb] [文件加载：109]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001185s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '56',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+)
+[ info ] [ PARAM ] array (
+  'username' => '123',
+  'mobile' => '15006172059',
+  'houses' => '123',
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000991s ]
+[ info ] [ RUN ] app\api\controller\Index->signUp[ C:\Work\Code\sub\application\api\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011668s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sub_enroll` [ RunTime:0.003626s ]
+[ sql ] [ SQL ] SELECT * FROM `sub_enroll` WHERE  `mobile` = '15006172059' LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SELECT COUNT(id) AS tp_count FROM `sub_enroll` LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] INSERT INTO `sub_enroll` (`username` , `mobile` , `createtime` , `houses` , `premises`) VALUES ('123' , '15006172059' , 1553759902 , '123' , '润江城') [ RunTime:0.000384s ]
+---------------------------------------------------------------
+[ 2019-03-28T15:58:32+08:00 ] 192.168.1.108 OPTIONS 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.017922s] [吞吐率：55.80req/s] [内存消耗：1,734.20kb] [文件加载：93]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001047s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'accept' => '*/*',
+  'access-control-request-headers' => 'content-type',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'access-control-request-method' => 'POST',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000949s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-03-28T15:58:32+08:00 ] 192.168.1.108 POST 192.168.1.125/sub/public/api/index/signUp
+[运行时间：0.025251s] [吞吐率：39.60req/s] [内存消耗：2,685.62kb] [文件加载：108]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001139s ]
+[ info ] [ LANG ] C:\Work\Code\sub\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'signUp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8100/',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'origin' => 'http://evil.com/',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '55',
+  'connection' => 'keep-alive',
+  'host' => '192.168.1.125',
+)
+[ info ] [ PARAM ] array (
+  'username' => '123',
+  'mobile' => '1500617205',
+  'houses' => '123',
+)
+[ info ] [ LANG ] C:\Work\Code\sub\public/../application/api\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000954s ]
+[ info ] [ RUN ] app\api\controller\Index->signUp[ C:\Work\Code\sub\application\api\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File

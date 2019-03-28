@@ -1,0 +1,18 @@
+[ 2019-03-28T14:54:57+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004216s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ 2019-03-28T14:54:57+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'enroll' [ RunTime:0.000733s ]
+[ 2019-03-28T14:54:57+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'sub_enroll' [ RunTime:0.000634s ]
+[ 2019-03-28T14:54:57+08:00 ][ sql ] [ SQL ] SELECT * FROM `information_schema`.`columns` WHERE TABLE_SCHEMA = 'sub' AND table_name = 'sub_enroll' ORDER BY ORDINAL_POSITION [ RunTime:0.003920s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.003778s ] mysql:host=127.0.0.1;dbname=sub;charset=utf8
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `sub_auth_rule` [ RunTime:0.003866s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] SELECT * FROM `sub_auth_rule` WHERE  `name` = 'enroll' LIMIT 1 [ RunTime:0.000545s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] INSERT INTO `sub_auth_rule` (`pid` , `name` , `title` , `icon` , `remark` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (0 , 'enroll' , 'Enroll' , 'fa fa-circle-o\r' , '' , 1 , 'normal' , 1553756103 , 1553756103) [ RunTime:0.001898s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `sub_auth_rule` WHERE  `name` = 'enroll/index' LIMIT 1 [ RunTime:0.000381s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `sub_auth_rule` WHERE  `name` = 'enroll/add' LIMIT 1 [ RunTime:0.000388s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `sub_auth_rule` WHERE  `name` = 'enroll/edit' LIMIT 1 [ RunTime:0.000335s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `sub_auth_rule` WHERE  `name` = 'enroll/del' LIMIT 1 [ RunTime:0.000334s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] SELECT `id` FROM `sub_auth_rule` WHERE  `name` = 'enroll/multi' LIMIT 1 [ RunTime:0.000359s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] INSERT INTO `sub_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 85 , 'enroll/index' , 'fa fa-circle-o' , '查看' , 0 , 'normal' , 1553756103 , 1553756103) [ RunTime:0.000430s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] INSERT INTO `sub_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 85 , 'enroll/add' , 'fa fa-circle-o' , '添加' , 0 , 'normal' , 1553756103 , 1553756103) [ RunTime:0.000303s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] INSERT INTO `sub_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 85 , 'enroll/edit' , 'fa fa-circle-o' , '编辑' , 0 , 'normal' , 1553756103 , 1553756103) [ RunTime:0.000233s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] INSERT INTO `sub_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 85 , 'enroll/del' , 'fa fa-circle-o' , '删除' , 0 , 'normal' , 1553756103 , 1553756103) [ RunTime:0.000233s ]
+[ 2019-03-28T14:55:03+08:00 ][ sql ] [ SQL ] INSERT INTO `sub_auth_rule` (`id` , `pid` , `name` , `icon` , `title` , `ismenu` , `status` , `createtime` , `updatetime`) VALUES (NULL , 85 , 'enroll/multi' , 'fa fa-circle-o' , '批量更新' , 0 , 'normal' , 1553756103 , 1553756103) [ RunTime:0.000222s ]
